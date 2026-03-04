@@ -1,0 +1,699 @@
+/* 1. IMPORTS AND BASIC SETUP */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f3f8fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Base Styles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* 2. LAYOUT AND CONTAINERS */
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* 3. TYPOGRAPHY */
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: #2a2b2c;
+}
+
+h3 {
+    font-size: 2rem;
+    color: #1976d2;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #1976d2;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* 4. BUTTON ELEMENTS */
+
+/* Primary button style */
+.button {
+    display: inline-block;
+    background: #1976d2;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #145ea8;
+}
+
+
+/* 5. HEADER AND NAVIGATION */
+
+/* Top navigation bar */
+.topbar {
+    background-color: #4497cb;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    left: 0;
+}
+
+/* Logo and home link container */
+.logo-home {
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-home img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+/* Navigation menu */
+.topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Dropdown menu styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a::after {
+    content: ' ▼';
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+/* Hidden dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    top: calc(100% + 5px); /* Position below the main link */
+    left: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 6px;
+    overflow: hidden;
+
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Display dropdown on hover */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    display: block; /* Make sure it's displayed for transition */
+}
+
+
+/* 6. HERO SECTION */
+.hero {
+    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero-icon {
+    width: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    color: #1976d2;
+    margin-bottom: 0;
+}
+
+.hero .container a{
+    text-decoration: none;
+}
+
+.hero span{
+    text-decoration: none;
+    color: #1976d2;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto; /* center horizontally + margin bawah */
+  width: fit-content;
+}
+
+.icon-departement {
+  width: 32px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+/* 7. SERVICES SECTION */
+.services {
+    margin: 3rem 0;
+}
+
+.services .container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(192, 189, 189, 0.877);
+}
+
+/* Services content layout */
+.services-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.services-text {
+    flex: 1;
+}
+
+/* Styled list items for services */
+.services-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #1976d2;
+}
+
+.services-list li strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1976d2;
+}
+
+/* Services image container */
+.services-image {
+    flex: 0 0 40%;
+}
+
+.services-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.37);
+}
+
+
+/* 8. PATIENT INFO SECTION */
+
+.patient-info {
+    background: #e3f2fd;
+    padding: 3rem 0;
+    margin: 3rem 0;
+}
+
+.patient-info h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Grid layout for patient steps */
+.patient-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual step box */
+.step {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid #1976d2;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step strong {
+    color: #1976d2;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Info icons grid */
+.info-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box img {
+    width: 60px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover img {
+    transform: scale(1.1);
+}
+
+/* 9. FAQ SECTION */
+
+.faq {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Individual FAQ item */
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ question/button */
+.faq-question {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out text and icon */
+    align-items: center; /* Vertically align items */
+    width: 100%; /* Full width button */
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left; /* Align text to the left */
+    font-family: inherit; /* Inherit font from body */
+    font-size: inherit; /* Inherit font size from body */
+    position: relative; /* For the pseudo-element arrow */
+}
+
+/* Arrow indicator for expansion */
+.faq-question::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #1976d2;
+    transition: transform 0.3s ease;
+    margin-left: 10px; /* Space between text and arrow */
+}
+
+/* Rotate arrow when active */
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+
+/* Hidden answer section */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: white;
+}
+
+/* Content inside the answer section */
+.faq-answer-content {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Display answer when active */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust as needed, will be overridden by JS for dynamic content */
+}
+
+/* 10. CONTACT SECTION */
+
+.contact {
+    background: linear-gradient(to right, #bbdefb, #90caf9);
+    padding: 4rem 0;
+}
+
+.contact-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-image {
+    flex: 0 0 auto;
+}
+
+.contact-image img {
+    width: 400px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 11. FOOTER */
+
+/* Footer column */
+footer {
+  background-color: #4497cb;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 40px 60px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-footer{
+  width: 40px;
+  gap: 10px;
+}
+
+.logo-col p {
+  font-weight: 400;
+  margin-top: 10px;
+  max-width: 300px;
+}
+
+.footer-logo{  
+  max-width: 200px;  
+  height: auto;
+  display: block;
+  max-height: 150px;
+  width: auto;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid white;
+  margin: 30px 0 20px;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* 12. RESPONSIVE DESIGN */
+
+/* Tablet devices (max-width: 960px) */
+@media (max-width: 960px) {
+    .topbar {
+        padding: 1rem;
+    }
+
+    .topbar nav {
+        gap: 20px; /* Reduce gap for navigation items */
+    }
+
+    /* Stack services content vertically */
+    .services-inner {
+        flex-direction: column;
+    }
+
+    /* Move image to top on smaller screens */
+    .services-image {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Stack contact content vertically */
+    .contact-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-text {
+        margin-bottom: 2rem;
+    }
+
+    .contact-image img {
+        width: 300px; /* Adjust image size for tablets */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin: 15px 0; /* Adjust margin for stacked columns */
+        min-width: unset; /* Remove min-width for better stacking */
+        width: 100%; /* Take full width when stacked */
+    }
+
+    .logo-col p {
+        margin: 10px auto; /* Center paragraph */
+    }
+
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col ul li {
+        justify-content: center; /* Center list items */
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .topbar nav {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        gap: 15px;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 100%; /* Position right below the parent link */
+        transform: translateY(0); /* Adjust initial position for mobile dropdown */
+    }
+
+    /* Reduce heading sizes */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    /* Full width forms */
+    .faq-answer-content input[type="text"] { /* Updated selector for new FAQ structure */
+        width: 100%;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .topbar nav {
+        flex-direction: column; /* Stack navigation links */
+        gap: 10px;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static; /* Make dropdown content flow naturally */
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #f9fafb; /* Lighter background for nested menu */
+    }
+
+    .dropdown-content a {
+        padding: 8px 10px;
+    }
+
+    /* Reduce padding for smaller screens */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .services .container,
+    .contact {
+        padding: 1.5rem;
+    }
+
+    /* Single column layouts */
+    .patient-steps,
+    .info-icons {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-image img {
+        width: 250px; /* Further reduce image size */
+    }
+
+    footer {
+        padding: 30px 20px 15px;
+    }
+
+    .footer-col {
+        margin: 10px 0;
+    }
+}
